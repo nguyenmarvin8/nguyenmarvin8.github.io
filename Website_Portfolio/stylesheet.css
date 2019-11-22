@@ -1,0 +1,234 @@
+body {
+    margin: 0%;
+}
+
+.Navbar {
+    overflow: hidden;
+    /* hides any content that overflows past the navbar boundary */
+    background-color: #1b263b;
+    position: fixed;
+    /* keeps navbar at the top of the screen as we scroll */
+    top: 0;
+    /* ensure no space is above navbar */
+    width: 100%;
+    /* makes navbar span full width */
+    z-index: 1;
+    /* makes sure no other elements dont display over the navbar */
+}
+
+/* navbar text */
+.Navbar a {
+    float: left;
+    /* this makes the text float on left of navbar */
+    display: block;
+    /* makes sure other text will display on the same line or row */
+    color: white;
+    padding: 14px 16px;
+    text-decoration: none;
+    /* gets rid of the underlines under the text on navbar */
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+}
+
+/* navbar hover effect */
+.Navbar a:hover {
+    background-color: #cea064;
+    color: white;
+    font-weight: bold;
+}
+
+/* navbar home button */
+.Navbar a.active { /*active selector styles a link*/
+    background-color: #475665;
+}
+
+/* video */
+#backgroundVideo {
+    position: fixed;
+    /* fixes video to page */
+    right: 0;
+    /* makes sure no space between edge of video and edge of page */
+    bottom: 0; 
+    /* makes sure no space between edge of video and edge of page */
+    min-width: 100%;
+    /* video displayed full width */
+    min-height: 50%;
+    z-index: -1;
+    /* content is blocking video */
+}
+
+.Video_Text {
+    background: #gba(0, 0, 0, 0.9);
+    color: white;
+    padding: 20px;
+    margin-top: 23%;
+}
+
+
+/* Table - covers styling of the columns and rows within the table */
+/* The asterisk is a universal selector that applies this effect to all elements on the page */
+* {
+    box-sizing: border-box;
+    /* creates a box with a border within where we will place most of the text */
+}
+
+.Column_1 {
+    float: left;
+    width: 50%;
+    /* take up half the screen */
+    padding: 10px;
+    padding-top: 3%;
+    padding-bottom: 105px;
+    /* space between top of solumn and the heading */
+    height: 400px; 
+    background-color: white;
+    /* position: relative;
+    text-align: center; */
+}
+
+.Column_2 {
+    float: left;
+    width: 50%;
+    /* take up half the screen */
+    padding: 10px;
+    padding-top: 1.9%;
+    /* space between top of solumn and the heading */
+    height: 400px; 
+    background-color: #475665;
+}
+
+.Column_3 {
+    float: left;
+    width: 50%;
+    /* take up half the screen */
+    padding: 10px;
+    padding-top: 3.5%;
+    /* space between top of solumn and the heading */
+    height: 400px; 
+    background-color: #475665;
+}
+
+/* Inserts something after the content of selected elements */
+.Row:after {
+    content: "";
+    /* leaving this bank we are letting the footer display - removing it makes the footer overwrite a column */
+    display: table;
+    /* display property specifies the type of display behavior, the table value tells the browser to treat the element as a table */
+    clear: both;
+    /* clears any elements from floating on the left or right of an element */
+}
+
+h1 {
+    text-transform: uppercase;
+    font-family: "Trebuchet MS", Optima; 
+    text-align: center;
+    margin-top: 3%;
+    color: black;
+}
+
+p {
+    font-family: Perpetua, Rockwell Extra Bold;
+    text-align: justify;
+    letter-spacing: 1px;
+    font-size: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+/* center align elements */
+center {
+    font-family: Perpetua, Rockwell Extra Bold;
+    text-align: center;
+    letter-spacing: 1px;
+    font-size: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+/* all anchor tags */
+a {
+    color: blue;
+}
+
+/* quote */
+q {
+    font-style: italic;
+    font-weight: bold;
+}
+
+/* image element */
+img {
+    filter: grayscale(75%);
+    max-width: 100%;
+    height: 340px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+/* picture size */
+.photos {
+    width: 120%;
+    height: 100%;
+}
+
+/* contact form */
+/* covers the input section of the contact form */
+input[type=text] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+    /* allows users to resize the height of the element */
+    font-family: Perpetua, Rockwell Extra Bold; 
+}
+
+/* submit button */
+input[type=submit] {
+    background-color: #cea064;
+    color: white;
+    font-weight: bold;
+    font-size: 11pt;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 2px;
+    cursor: pointer;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* hover effect for submit button */
+input[type=submit]:hover {
+    background-color: #e4c499;
+    transform: scale(1.04);
+    transition: transform .3s;
+}
+
+/* form element */
+form {
+    border-radius: 5px;
+    background-color: white;
+    padding-left: 40px;
+    padding-top: 5px;
+    font-family: "Trebuchet MS", Optima;
+
+}
+
+/* footer element */ 
+footer {
+    padding: 5px;
+    background-color: #475665;
+}
+/* 
+.centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  } */
