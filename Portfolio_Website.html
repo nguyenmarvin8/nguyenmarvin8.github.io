@@ -1,221 +1,218 @@
 <!DOCTYPE html>
-<head>
+<html>
 
-<!-- HEAD -->
+<!-- Head -->
+<head>
     <meta charset="UTF-8">
     <title>Marvin Nguyen</title>
-    <link rel="stylesheet" href="stylesheet.css" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
-    <script src="JavaScript.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script> 
+        <link rel="stylesheet" type="text/css" href="stylesheet.css">
+        <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+        <script src="JavaScript.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script> <!-- We use a little bit of jQuery on this site now -->
 </head>
 
-<!-- BODY -->
-<body class="Background">
+<!-- Body -->
+<body class="Background"> 
+<!-- Fade in effect -->
+<script> 
+  document.body.className += ' fade-out';
+    $(function() {
+      $('body').removeClass('fade-out');
+    }
+  );
 
-    <!-- fadeout effect -->
-    <script>
-        document.body.class += ' fade-out';
-        $(function() {
-            $('body').removeClass('fade-out');
-        }
-    );    
-    </script>
+</script>
 
-<!-- NAVBAR -->
-    <div class="Navbar">
-        <a href="#Home" class="active">Home</a>
-        <a href="#About">About</a>
-        <a href="#GitHub">GitHub</a>
-        <a href="#Contact">Contact</a>
-        <a onclick="openForm()">Contact</a> <!-- This makes it so that our openForm function runs when we click Contact on the nav bar -->
-    </div>
-
-    <!-- Allows us to close form when we click outside the nav bar or contact form -->
-    <div class="btn cancel" onclick="closeForm()">
-
-<!-- HOME -->
-<div class="Home">
-<br>
-    <br>
-
-<!-- VIDEO -->
-
-        <video autoplay muted loop id="backgroundVideo">
-            <source src="./video/helloworld.mp4" type="video/mp4">
-            Your browser does not support HTML5 videos.        
-        </video>
-    </div>
-
-<!-- VIDEO TEXT -->
-    <div class="Video_Text">
-        <h1 style="color: white;">Marvin Nguyen's Portfolio</h1>
-            <p>
-                <strong>
-                    <center>
-                        <q>The computer programmer is a creator of universes for which he alone is the lawgiver.
-                            <br>No playwright, no stage director, no emperor, however powerful, has ever exercised such absolute authority to arrange a stage or
-                            <br>field of battle and to command such unswervingly dutiful actors or troops.
-                            </q>	
-                            <br>-Joseph Weizenbaum<br>
-                            <br>
-                            My name is Marvin Nguyen. Welcome to my portfolio website. On it, I will tell you about my background and experience.<br>
-                            <br>Thank you for stopping by and enjoy! 
-                    </center>
-                </strong>
-            </p>
-    </div>
-
-<!-- SLIDESHOW SECTION -->
-    <div id="slideshow">
-        <div id="slideshowBackground">
-            <div id="slideshowContainer">
-
-                <div class="mySlides fade">
-                    <div class="slideNumber">1 / 6</div>
-                    <img src="./photos/html.jpg" alt="" class="slideShowImages" style="width: 100%;">
-                    <div class="text">I am a Front-end web developer trained in HTML,</div>
-                </div>
-
-                <div class="mySlides fade">
-                    <div class="slideNumber">2 / 6</div>
-                    <img src="./photos/css.jpg" alt="" class="slideShowImages" style="width: 100%;">
-                    <div class="text">CSS</div>
-                </div>
-
-                <div class="mySlides fade">
-                    <div class="slideNumber">3 / 6</div>
-                    <img src="./photos/javascript.jpg" alt="" class="slideShowImages" style="width: 100%;">
-                    <div class="text">JavaScript</div>
-                </div>
-
-                <div class="mySlides fade">
-                    <div class="slideNumber">4 / 6</div>
-                    <img src="./photos/jquery.jpg" alt="" class="slideShowImages" style="width: 100%;">
-                    <div class="text">jQuery</div>
-                </div>
-
-                <div class="mySlides fade">
-                    <div class="slideNumber">5 / 6</div>
-                    <img src="./photos/bootstrap.jpg" alt="" class="slideShowImages" style="width: 100%;">
-                    <div class="text">and Bootstrap!</div>
-                </div>
-
-                <div class="mySlides fade">
-                    <div class="slideNumber">6 / 6</div>
-                    <img src="./photos/connect.jpg" alt="" class="slideShowImages" style="width: 100%;">
-                    <div class="text">
-                        <a href="#Contact" onclick="openForm()" style="color:white;">Contact me!</a>
-                    </div>
-                </div>
-
-                <a class="Previous" onclick="plusSlides(-1)">&#10094;</a>
-                <a class="Next" onclick="plusSlides(1)">&#10095;</a>
-
-            </div>
-
-            <br>
-
-            <div style="text-align: center">
-                <span class="dot" onclick="currentSlide(1)"></span>
-                <span class="dot" onclick="currentSlide(2)"></span>
-                <span class="dot" onclick="currentSlide(3)"></span>
-                <span class="dot" onclick="currentSlide(4)"></span>
-                <span class="dot" onclick="currentSlide(5)"></span>
-                <span class="dot" onclick="currentSlide(6)"></span>
-
-            </div>
-        </div>
-    </div>
-
-<!-- function for slideshow -->
-    <script>
-        var slideIndex = 1;
-        showSlide(slideIndex);
-        function plusSlides(n) {
-            showSlide(slideIndex += n)
-        }
-        function currentSlide(n) {
-            showSlide(slideIndex = n);
-        }
-
-        function showSlide(n) {
-            var i;
-            var slides = document.getElementsByClassName("mySlides");
-            var dots = document.getElementsByClassName("dot");
-                if (n > slide.length) {slideIndex =1}
-                if (n < 1) {slideIndex = slide.length}
-                    for (i = 0; i < slide.length; i++) {
-                        dots[i].className = dots[i].className.replace(" active", "");
-                    }
-                slide[slideIndex-1].style.display = "block;"
-                dot[slideIndex-1].className += " active";
-        }
-    </script>
-
-
-<!-- ABOUT SECTION -->
-    <div class="Row" id="About">
-        <div class="Column_2">
-            <img src="./photos/laptop.jpg" alt="" class="photos">
-        </div>
-
-        <div class="Column_1">
-            <h1>About</h1>
-                <p>I am a front-end web developer!
-                    <br>
-                    <br>
-                    I am a graduate of <a href="https://www.learncodinganywhere.com" target="_blank">The Tech Academy</a>'s Front-End Web Developer Boot Camp, and trained and experienced in the following web and programming languages: HTML, CSS, JavaScript, and more. 
-                    <br>
-                    <br>
-                    I am a Front-End developer and would love to work with you on your project. <a href="#Contact">Contact</a> me below!
-                </p>
-        </div>
-    </div>
-
-<!-- GITHUB SECTION -->
-    <div class="Row" id="GitHub">
-        <div class="Column_1">
-            <h1 class="centered">GitHub</h1>
-                <p>You can view my coding projects on my GitHub profile here: <br>
-                    <center><a href="https://github.com/nguyenmarvin8" target="_blank">Marvin Nguyen GitHub</a></center>
-                </p>
-        </div>
-
-    <div class="Column_2">
-        <a href="https://github.com/nguyenmarvin8" target="_blank"><img src="./photos/github.jpg" alt="GitHub" class="photos"></a>
-    </div>
-    </div>
-
+<!-- Navbar -->
+<div class="Navbar">
+    <a class="active" href="#Home">Home</a> 
+    <a href="#About">About</a>
+    <a href="#GitHub">GitHub</a>
+    <a onclick="openForm()">Contact</a> 
 </div>
 
-<!-- CONTACT SECTION -->
-    <div class="Row" id="Contact">
-        <button onclick="openForm()" class="popUpButton"> CONTACT </button>
-        <div class="formPopup" id="myForm">
-            <form action="https://formspree.io/info@learncodinganywhere.com" method="POST" class="formContainer">
-            <h1>Contact</h1>
-                <label>Name: </label>
-                    <input type="text" placeholder="Name" name="name" required>
-                <label>Phone: </label>
-                    <input type="text" placeholder="Phone" name="phone">
-                <label>Email: </label>
-                    <input type="text" placeholder="Email" name="email" required>
-                <label>Message: </label>
-                    <input type="text" placeholder="Type your message here" name="message" required>
+<!-- This allows us to close the form -->
+<div class="btn cancel" onclick="closeForm()">
 
-                    <button type="submit" class="btn">SUBMIT</button>
-                    <button type="button" class="btn cancel" onclick="closeForm()">CLOSE</button>
-            </form>
+<!-- Home -->
+<div id="Home">
+    <br> 
+    <br>
+    
+<!-- Video -->
+    <video autoplay muted loop id="Typing_Video"> 
+        <source src="./video/helloworld.mp4" type="video/mp4">
+        Your browser does not support HTML5 video. 
+    </video>
+</div>
+
+<!-- Video text --> 
+<div class="Video_Text"> 
+    <h1 style="color:white;">Marvin Nguyen's Portfolio</h1>
+        <p> 
+            <strong>
+                <center>
+                    <q>The computer programmer is a creator of universes for which he alone is the lawgiver.
+                    <br>No playwright, no stage director, no emperor, however powerful, has ever exercised such absolute authority to arrange a stage
+                    <br>or field of battle and to command such unswervingly dutiful actors or troops.
+                    </q>	
+                    <br>-Joseph Weizenbaum<br>
+                    <br>
+                    My name is Marvin Nguyen. Welcome to my portfolio website. <br>
+                    On it, I will tell you about my background and experience.<br>
+                    <br>Thank you for stopping by and enjoy! 
+                </center>	
+            </strong>				
+        </p> 
+</div>
+
+<!-- Slideshow section -->
+  <div id="Slideshow">
+    <div id="Slideshow_Background"> 
+      <div id="Slideshow_Container">
+        
+		<div class="mySlides fade">
+          <div class="Slide_Number">1 / 6</div>
+            <img class="Slide_Show_Images" src="./photos/html.jpg" style="width:100%">
+              <div class="text">I am a Front-end web developer trained in HTML,</div>
         </div>
+        
+		<div class="mySlides fade">
+          <div class="Slide_Number">2 / 6</div>
+            <img class="Slide_Show_Images" src="./photos/css.jpg" style="width:100%">
+              <div class="text">CSS</div>
+        </div>
+
+        <div class="mySlides fade">
+          <div class="Slide_Number">3 / 6</div>
+            <img class="Slide_Show_Images" src="./photos/javascript.jpg" style="width:100%">
+              <div class="text">JavaScript</div>
+        </div>
+
+        <div class="mySlides fade">
+          <div class="Slide_Number">4 / 6</div>
+            <img class="Slide_Show_Images" src="./photos/jquery.jpg" style="width:100%">
+              <div class="text">jQuery</div>
+        </div>
+
+		<div class="mySlides fade">
+	      <div class="Slide_Number">5 / 6</div>
+			<img class="Slide_Show_Images" src="./photos/bootstrap.jpg" style="width:100%">
+              <div class="text">and Bootstrap!</div>
+			</div>
+
+		<div class="mySlides fade">
+		  <div class="Slide_Number">6 / 6</div>
+			<img class="Slide_Show_Images" src="./photos/connect.jpg" style="width:100%">
+			  <div class="text"> 
+				<a onclick="openForm()" href="#Contact" style="color:white;">Contact me!</a>
+			  </div>
+	    </div>
+	
+		  <a class="Previous" onclick="plusSlides(-1)">&#10094;</a>
+		  <a class="Next" onclick="plusSlides(1)">&#10095;</a>
+		
+	  </div>
+  <br>
+
+      <div style="text-align:center">
+ 
+		<span class="dot" onclick="currentSlide(1)"></span> 
+		<span class="dot" onclick="currentSlide(2)"></span> 
+		<span class="dot" onclick="currentSlide(3)"></span> 
+		<span class="dot" onclick="currentSlide(4)"></span> 
+		<span class="dot" onclick="currentSlide(5)"></span> 
+		<span class="dot" onclick="currentSlide(6)"></span> 
+
+      </div>
     </div>
+  </div>
 
+    <script>
+    var slideIndex = 1;
+        showSlides(slideIndex);
+    function plusSlides(n) {
+        showSlides(slideIndex += n);
+    }
+    function currentSlide(n) {
+        showSlides(slideIndex = n);
+    }
+    function showSlides(n) {
+        var i;
+        var slides = document.getElementsByClassName("mySlides");
+        var dots = document.getElementsByClassName("dot");
+        if (n > slides.length) {slideIndex = 1}    
+        if (n < 1) {slideIndex = slides.length}
+            for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";  
+            }
+            for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+            }
+        slides[slideIndex-1].style.display = "block";  
+        dots[slideIndex-1].className += " active";
+    }
+    </script>
 
-    <!-- FOOTER SECTION -->
-    <footer>
-        <p>
-            <center>&copy Prosper Consulting Inc., <a href="https://learncodinganywhere.com/">The Tech Academy</a></center>
-        </p>
-    </footer>
+<!-- About section -->
+  <div class="Row" id="About"> 
+	<div class="Column_2"> <!-- Left column -->
+	  <img src="./photos/laptop.jpg" alt="Laptop">
+	</div>
+  
+	<div class="Column_1"> <!-- Right column -->
+	  <h1>About</h2>
+        <p>I am a front-end web developer!
+            <br>
+            <br>
+            I am a graduate of <a href="https://www.learncodinganywhere.com" target="_blank">The Tech Academy</a>'s Front-End Web Developer Boot Camp, and trained and experienced in the following web and programming languages: HTML, CSS, JavaScript, and more. 
+            <br>
+            <br>
+            I am a Front-End developer and would love to work with you on your project. <a href="#Contact">Contact</a> me below!
+        </p>	</div>
+  </div>
+
+<!-- GitHub section -->
+	<div class="Row" id="GitHub">
+		<div class="Column_1"> <!-- Left column -->
+			<h1>GitHub</h1>
+				<p>You can view my coding projects on my GitHub profile here:<br>
+				<center><a href="https://github.com/nguyenmarvin8" target="_blank">Marvin Nguyen GitHub</a></center></p>
+		</div>
+		
+		<div class="Column_2"> <!-- Right column -->
+			<a href="https://github.com/nguyenmarvin8" target="_blank"><img src="./photos/github.jpg" alt="GitHub"></a>
+		</div>
+	</div>
+</div>
+
+<!-- Contact section -->
+  <div id="Contact"> 
+    <button onclick="openForm()" class="Pop_Up_Button"> CONTACT </button>
+	  <div class="form-popup" id="myForm">
+	    <form action="https://formspree.io/info@learncodinganywhere.com" method="POST" class="form-container"> <!-- Here we are using a free online service from https://formspree.io/ to send our contact form to an email address of our choosing - note: it will not run unless live on the internet, you have to push it to your online website first -->
+		<h1 id="contactFont">Contact</h1>
+			<label for="name" id="textFormColor"><b>Name</b></label>
+			  <input type="text" placeholder="" name="name" required>
+			<label for="phone" id="textFormColor"><b>Phone</b></label>
+			  <input type="text" placeholder="" name="phone">
+			<label for="email" id="textFormColor"><b>Email</b></label>		
+			  <input type="text" placeholder="" name="email" required>
+			<label for="message" id="textFormColor"><b>Message</b></label>
+			  <input type="text" placeholder="Type your message here" name="message">
+ 
+    <button type="submit" class="btn">Submit</button>
+    <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+	    </form>
+	  </div>
+  </div>
+	
+<!-- Footer section -->	
+	<footer>
+	  <p>
+	    <center>&copy Prosper Consulting Inc.,  <a href="https://learncodinganywhere.com/">The Tech Academy</a></center><br>
+      </p>
+	</footer>
+
 </body>
 </html>

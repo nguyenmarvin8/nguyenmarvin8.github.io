@@ -1,136 +1,124 @@
 html {
-    scroll-behavior: smooth;
+    scroll-behavior: smooth; /*ensures that the page scrolling is smooth when the navbar is clicked */
 }
 
+/* Body */
 body {
-    margin: 0%; /* displays all the way to the edge */
-    opacity: 1; /*transition affect the page loading fade in effect */
-    /* transition: 3s opacity;      */
+    margin: 0%; /* ensures our site displays all the way to the edge of the browser screen */
+    opacity: 1; /* transition affect the page loading fade in effect */
+    transition: 3s opacity; 
     letter-spacing: .2vw;
-    font-family: Avant Garde, Helvetica;
+    font-family: Avant Garde, Helvetica; 
     font-size: 1.5vw;
+
 }
 
-/* contributes to fade effect for page that occurs when the page is loaded */
+/* contributes to the fade effect for the page that occurs when the page is loaded */
 body.fade-out {
-    opacity: .1;
-    transform: none;
+    opacity: .1; /* sets the level of opacity at the start of page load */
+    transition: none;
 }
 
+/* Navbar */
 .Navbar {
-    overflow: hidden;
-    /* hides any content that overflows past the navbar boundary */
-    background-color: #1b263b;
+    overflow: hidden; /* any content that overflows beyond the boundary of our nav bar is not displayed */
+    background-color: #1b263b; 
+    position: fixed; /* keeps the navbar at the top of the screen as we scroll */
+    top: 0; /* ensures no space is displayed above the navbar */
+    width: 100%; /* makes the navbar span the entire width of the page */
+    z-index: 1; /* ensures other elements don't display over the navbar */
     position: fixed;
-    /* keeps navbar at the top of the screen as we scroll */
-    top: 0;
-    /* ensure no space is above navbar */
-    width: 100%;
-    /* makes navbar span full width */
-    z-index: 1;
-    /* makes sure no other elements dont display over the navbar */
-    position: fixed;
-    -webkit-animation: moveNav 5s; 
-    /* Safari 4.0-8.0 */
-    animation: moveNav 5s; 
-
+    -webkit-animation: moveNav 3s; /* Safari 4.0 - 8.0 */
+    animation: moveNav 3s;
 }
 
-/* navbar text */
+/* Navbar text */
 .Navbar a {
-    float: left;
-    /* this makes the text float on left of navbar */
-    display: block;
-    /* makes sure other text will display on the same line or row */
-    color: white;
-    padding: .75vw 1vw;
-    /* adds padding around text */
-    text-decoration: none;
-    /* gets rid of the underlines under the text on navbar */
-    font-family: 'Roboto', sans-serif;
-    font-size: 1.5vw;
-    text-align: center;
+    float: left; /* specifies that the text floats on the left on the navbar */
+    display: block; /* ensures that other text will be displayed on the same line or row, instead of a new line */
+    color: white; 
+    padding: .75vw 1vw; 
+    text-decoration: none; /* This gets rid of the underlines under the text on our navbar */
+    font-family: Avant Garde, Helvetica; 
+    font-size: 1.5vw; 
+    text-align: center; 
     position: relative;
-    -webkit-animation: movenavText 5.75s;
+    -webkit-animation: movenavText 4s; /* Safari 4.0 - 8.0 */
+    animation: movenavText 4s;
     letter-spacing: .2vw;
 }
 
-/* The animation effect for moving the nav bar in from above the top of the screen upon page load */
+/* animation effect for moving the navbar in from above the top of the screen upon page load */
 @keyframes moveNav {
     from {left: -100vw;}
     to {left: 0vw;}
-  }
-  
-  /* The animation effect for moving the nav bar in from above the top of the screen upon page load */
-  @keyframes movenavText {
+}
+
+@keyframes movenavText {
     from {top: -100vw;}
     to {top: 0vw;}
-  }
-  
-  
-  /* This animation effect causes the overlay video text to move up from the bottom of the page upon page load */
-  @keyframes movevideoText {
+}
+
+@keyframes movevideoText {
     from {top: -100vw;}
     to {top: 0px;}
-  }
+}
 
-
-/* navbar hover effect */
+/* Navbar hover effect */
 .Navbar a:hover {
     background-color: #cea064;
-    color: white;
-    font-weight: bold;
+    color: white; 
+    font-weight: bold; 
+    cursor: pointer;
+    -webkit-transition-duration: 1s; 
+    transition-duration: 1s;
 }
 
-/* navbar home button */
-.Navbar a.active { /*active selector styles a link*/
-    background-color: #475665;
+/* Navbar home button */
+.Navbar a.active { /* The active selector styles a link */
+    background-color: #475665;  
 }
 
-@keyframes zoominoutsinglefeature {
-    0% {
-        transform: scale(1.5,1.5);
-    }
-    100% {
-        transform: scale(1,1);
-    }
+/* This causes the video to zoom out from a zoomed in position upon page load */
+@keyframes zoominoutsinglefeatured {
+0% {
+    transform: scale(1.5,1.5);
+}
+100% {
+    transform: scale(1,1);
+}
 }
 
-/* video */
-#backgroundVideo {
-    position: fixed;
-    /* fixes video to page */
-    right: 0;
-    /* makes sure no space between edge of video and edge of page */
+/* Video */
+#Typing_Video {
+    position: fixed; /* This fixes our video to the page  */
+    right: 0; 
     bottom: 0; 
-    /* makes sure no space between edge of video and edge of page */
-    min-width: 100%;
-    /* video displayed full width */
+    min-height: 100%; /* This ensures the video is displayed across the full height of the page */
     min-height: 50%;
+    top: 0;
     z-index: -1;
-    /* content is blocking video */
-    animation: zoominoutsinglefeatured 5s;
-
+    animation: zoominoutsinglefeatured 3s;
 }
 
-.Video_Text {
-    background: rgba(0, 0, 0, 0.5);
-    color: white;
-    /* padding: 20px; */
-    margin-top: 23%;
+/* Text over the video */ 
+.Video_Text { 
+    background: rgba(0, 0, 0, 0.5); /* This provides a semi-transparent background for the text to sit over */
+    color: white; 
     width: 100%;
-    padding-top: .1vh;
+    padding-top: .1vh; /* adds padding around the text so that the background goes slightly beyond the text */
+    padding-bottom: 1vh;
+    margin-top: 23%;
     position: relative;
-    -webkit-animation: moveNav 4s;
-    animation: movevideoText 4s;
-
+    -webkit-animation: moveNav 2s; /* Safari 4.0 - 8.0 */
+    animation: movevideoText 2s;
 }
 
-
-/* slideshow styling */
-#slideshowBackground {
-    background-color: rgba(255,255,255, 0.35);
+/* Slideshow Styling */
+#Slideshow_Background {
+    background:rgba(255,255,255, 0.35); /* This creates a slightly transparent white background that's placed over the video */
 }
+
 
 .mySlides {
     display: none;
@@ -139,32 +127,33 @@ body.fade-out {
 @-webkit-keyframes fade {
     from {opacity: .4} 
     to {opacity: 1}
-  }
-  
-@keyframes fade {
-from {opacity: .4} 
-to {opacity: 1}
 }
 
+@keyframes fade {
+    from {opacity: .4} 
+    to {opacity: 1}
+}
 
-/* slideshow section container */
-#slideshowContainer {
+/* Slideshow section / container */
+#Slideshow_Container {
     width: 39.5vw;
     height: auto;
     padding-top: 4%;
     position: relative;
     margin: auto;
+
 }
 
-/* image in slideshow */
-.slideShowImages {
+/* Images contained within slideshow */
+.Slide_Show_Images {
     vertical-align: middle;
     height: auto;
-    box-shadow: 0px 5px 10px 12px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 5px 10px 12px rgba(0, 0, 0, .75);
     width: auto;
 }
 
-/* next and prev buttons */
+
+/* Next and previous buttons */
 .Previous, .Next {
     cursor: pointer;
     position: absolute;
@@ -174,26 +163,26 @@ to {opacity: 1}
     margin-top: -0vw;
     color: #cea064;
     font-weight: bold;
-    font-size: 1.5vm;
+    font-size: 1.5vw;
     border-radius: 0 3px 3px 0;
     user-select: none;
-    transition: .6s ease;
+    transition: 0.6s ease;
 }
 
-/* positioning arrows on slideshow */
+/* Positioning the right-hand next button */
 .Next {
     right: 0;
     border-radius: 3px 0 0 3px;
 }
 
-/* hover effect on slideshow buttons */
+/* Hover effect on slide show buttons */
 .Previous:hover, .Next:hover {
     background-color: #cea064e3;
     color: #293d63;
     border-radius: 3px;
 }
 
-/* slideshow text */
+/* Slideshow text */
 .text {
     color: white;
     padding: 1vw;
@@ -202,15 +191,14 @@ to {opacity: 1}
     width: 100%;
     text-align: center;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    letter-spacing: .1vw;
+    letter-spacing: .1vw; 
     font-size: 1.5vw;
-    background-color: rgba(0, 0, 0, 0.75);
+    background-color: rgba(0,0,0,0.75);
     font-weight: bold;
-    border-radius: 7px 7px 7px 7px;
 }
 
-/* text 1/6 */
-.slideNumber {
+/* Number text (1/6, 2/6, etc.) - we have set this display to none, which means these are hidden */
+.Slide_Number {
     color: white;
     position: absolute;
     top: 0;
@@ -221,7 +209,7 @@ to {opacity: 1}
     display: none;
 }
 
-/* dots under slideshow */
+/* The dots under the slideshow */
 .dot {
     cursor: pointer;
     height: 1vw;
@@ -235,126 +223,104 @@ to {opacity: 1}
     z-index: 1;
 }
 
-/* hover effect for slideshow dots */
+/* Hover effect for slideshow dots */ 
 .active, .dot:hover {
     background-color: black;
 }
 
-/* fading animation for slideshow */
+/* Fading animation for slideshow */
 .fade {
     -webkit-animation-name: fade;
     -webkit-animation-duration: 1.5s;
     animation-name: fade;
-    animation-duration: 1.5s;
+    animation-duration: 1.5s;  
 }
 
-/* Table - covers styling of the columns and rows within the table */
-/* The asterisk is a universal selector that applies this effect to all elements on the page */
-* {
-    box-sizing: border-box;
-    /* creates a box with a border within where we will place most of the text */
+/* Table - this section covers the styling of the columns and rows within our table */
+* { /* The asterisk is a universal selector that applies this effect to all elements on the page */
+    box-sizing: border-box; /* This creates a box with a border within which we will place most of our text */
 }
 
 .Column_1 {
-    float: left;
-    width: 50%;
-    /* take up half the screen */
-    padding: 10px;
+    float: left;  
+    width: 50%; /* This ensures one column takes up half the page width */
     padding-top: 3%;
-    padding-bottom: 105px;
-    /* space between top of solumn and the heading */
-    height: 400px; 
-    background-color: white;
-    /* position: relative;
-    text-align: center; */
+    padding-bottom: 105px; 
+    background-color: #f2f2f2; 
+    height: 400px; /* You may need to adjust this to fit your content */
 }
 
 .Column_2 {
     float: left;
     width: 50%;
-    /* take up half the screen */
     padding: 10px;
-    padding-top: 1.9%;
-    /* space between top of solumn and the heading */
-    height: 400px; 
-    background-color: #475665;
+    padding: 1.9%;
+    height: 400px; /* You may need to adjust this to fit your content */
+    background-color: #4d4d4d;
 }
 
-/* .Column_3 {
-    float: left;
-    width: 50%;
-    /* take up half the screen */
-    /* padding: 10px;
-    padding-top: 3.5%; */
-    /* space between top of solumn and the heading */
-    /* height: 400px; 
-    background-color: #475665;
-} */ 
-
-/* Inserts something after the content of selected elements */
-.Row:after {
-    content: "";
-    /* leaving this bank we are letting the footer display - removing it makes the footer overwrite a column */
-    display: table;
-    /* display property specifies the type of display behavior, the table value tells the browser to treat the element as a table */
-    clear: both;
-    /* clears any elements from floating on the left or right of an element */
+.Row:after { /* This inserts something after the content of selected elements */
+    content: ""; /* By leaving this blank, we are allowing the footer (covered lower down) to be displayed - removing it makes the footer overwrite a column */
+    display: table; /* The display property specifies the type of display behavior; the table value tells the browser to treat the element as a table */
+    clear: both; /* This clears any other elements from floating on the left or the right of an element */
 }
 
+/* Heading 1 elements */
 h1 {
-    text-transform: uppercase;
+    text-transform: uppercase; /* We are capitalizing our headings */
     font-family: "Trebuchet MS", Optima; 
     text-align: center;
-    margin-top: 3%;
+    margin-top: 3%; /* We are adding a small margin above the headings */
     color: black;
 }
 
+#contactFont {
+    color: white;
+}
+
+/* Paragraph elements */
 p {
     font-family: Perpetua, Rockwell Extra Bold;
     text-align: justify;
-	letter-spacing: .1vw; /* This expands the text slightly */
-	font-size: 1.5vw;
-	padding-left: 1vw;
-	padding-right: 1vw;
+    letter-spacing: .1vw; /* This expands the text slightly */
+    font-size: 1.5vw;
+    padding-left: 1vw;
+    padding-right: 1vw;
 }
 
-/* center align elements */
+/* Center align elements - this embraces all centered text */
 center {
     font-family: Perpetua, Rockwell Extra Bold;
     text-align: center;
-	letter-spacing: .1vw;
-	font-size: 1.5vw;
-	padding-left: 5vw;
-	padding-right: 5vw;
+    letter-spacing: .1vw;
+    font-size: 1.5vw;
+    padding-left: 5vw;
+    padding-right: 5vw;
 }
 
-/* all anchor tags */
+/* Anchor elements */
 a {
-    color: blue;
+    color: blue; /* We are ensuring all links are blue */
 }
 
-/* quote */
+/* Quotation elements */
 q {
     font-style: italic;
     font-weight: bold;
 }
 
-/* image element */
+/* Image elements */
 img {
-    filter: grayscale(75%);
+    filter: grayscale(75%); /* This rids our pictures of 75% of their color */
+  
     max-width: 100%; 
-	height: 100%;
+    max-height: 350px;
     margin: auto auto auto auto;
-	display: block;	/* By specifying block display we can ensure our images are able to be centered */
+    display: block;	/* By specifying block display we can ensure our images are able to be centered */
 }
 
-/* picture size */
-.photos {
-    width: 120%;
-    height: 100%;
-}
 
-/* contact form */
+
 /* Contact form styling */
 
 /* Makes contact form button slide in from right on page load */
@@ -364,7 +330,7 @@ img {
 }
 
 /* Button used to open the contact form - fixed at the bottom of the page */
-.popUpButton {
+.Pop_Up_Button {
     bottom: 1.75vw;
     right: 1.75vw;
     width: 25vw;  
@@ -373,13 +339,12 @@ img {
     border: solid;
     cursor: pointer;
     position: fixed;
-    border-radius: 2px;
     -webkit-animation: movePopup 5s;
     animation: movePopup 5s;
 }
 
 /* The popup form - hidden by default */
-.formPopup {
+.form-popup {
     border: 3px solid #f0f1f0;
     z-index: 8;
     display: none;
@@ -389,25 +354,25 @@ img {
 }
 
 /* Form styling */
-.formContainer {
+.form-container {
     max-width: 49vw;
     padding: 9px;
-    background-color: white;
+    background-color: #475665;
 }
 
 /* Input fields */
-.formContainer input[type=text], .formContainer input[type=password] {
+.form-container input[type=text], .form-container input[type=password] {
     width: 100%;
     padding: .93vw;
     margin: .6vw 0 .6vw 0;
     border: none;
-    background: Gainsboro;
+    background: white;
     font-family: Helvetica, Avant Garde;
     font-size: 1vw; 
 }
 
 /* Submit button */
-.formContainer .btn {
+.form-container .btn {
     background-color: white;
     color: black;
     border-color: black;
@@ -415,10 +380,10 @@ img {
 }
 
 /* Close button */
-.formContainer .cancel {
-    background-color: rgb(27, 27, 27);
+.form-container .cancel {
+    background-color: black;
     color: white;
-    border-color: gray;
+    border-color: white;
 }
 
 /* Button styling */
@@ -435,34 +400,29 @@ button {
 }
 
 /* Hover effect for buttons */
-button:hover, .formContainer .btn:hover{
+button:hover, .form-container .btn:hover{
     color: black;
-    background-color: #ffcb86;
-    -webkit-transition-duration: 1s; 
-    transition-duration: 1s;
+    background-color: #fad8ad;
+    -webkit-transition-duration: .5s; 
+    transition-duration: .5s;
     border-style: solid;
     border-color: silver;
 }
-.formContainer .cancel:hover{
+.form-container .cancel:hover{
     color: white;
-    background-color: rgb(0, 0, 0);
+    background-color: rgb(34, 33, 33);
     -webkit-transition-duration: 1s; 
     transition-duration: 1s;
     border-style: solid;
-    border-color: white;
+    border-color: black;
 }	
 
-
-/* footer element */ 
-footer {
-    padding: 5px;
-    background-color: #475665;
+#textFormColor {
+    color: white;
 }
 
-/* 
-.centered {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  } */
+/* Footer element */
+footer {
+    padding: 2%;
+    background-color:#475665;
+}
